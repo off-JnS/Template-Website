@@ -1,0 +1,21 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Debug logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Build files
+dist/
+build/

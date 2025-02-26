@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>[Business Name] - [Business Type]</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Add this to your existing CSS file under the Navigation section */
+        .logo {
+            padding: 0.5rem;
+        }
+
+        .logo img {
+            height: 50px;
+            /* Adjust this value to match your logo's desired height */
+            width: auto;
+            display: block;
+        }
+
+        /* Update the existing nav styles to properly align the logo with navigation */
+        nav {
+            /* ... existing styles ... */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Business Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Startseite</a>
+            <a href="#about">Über uns</a>
+            <a href="#services">Leistungen</a>
+            <a href="#gallery">Galerie</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>[Firmenname]</h1>
+            <p class="hero-subtitle">[Slogan]</p>
+            <button class="cta-button">Jetzt Buchen</button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>Über uns</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>[Business Description]</p>
+            </div>
+            <div class="about-image">
+                <img src="images/about/about-img.png" alt="Über uns Bild" class="responsive-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2>Unsere Leistungen</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/services/service-1.png" alt="Service 1" class="responsive-image">
+                <h3>[Service Name]</h3>
+                <p>[Service Description]</p>
+                <span class="price">[Price]</span>
+            </div>
+            <div class="service-card">
+                <img src="images/services/service-2.png" alt="Service 2" class="responsive-image">
+                <h3>[Service Name]</h3>
+                <p>[Service Description]</p>
+                <span class="price">[Price]</span>
+            </div>
+            <div class="service-card">
+                <img src="images/services/service-3.png" alt="Service 3" class="responsive-image">
+                <h3>[Service Name]</h3>
+                <p>[Service Description]</p>
+                <span class="price">[Price]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2>Unsere Galerie</h2>
+        <div class="gallery-grid">
+            <picture>
+                <source srcset="images/gallery/gallery-1.webp" type="image/webp">
+                <source srcset="images/gallery/gallery-1.png" type="image/png">
+                <img src="images/gallery/gallery-1.png" alt="Galerie Bild 1" class="gallery-image">
+            </picture>
+            <picture>
+                <source srcset="images/gallery/gallery-2.webp" type="image/webp">
+                <source srcset="images/gallery/gallery-2.png" type="image/png">
+                <img src="images/gallery/gallery-2.png" alt="Galerie Bild 2" class="gallery-image">
+            </picture>
+            <picture>
+                <source srcset="images/gallery/gallery-3.webp" type="image/webp">
+                <source srcset="images/gallery/gallery-3.png" type="image/png">
+                <img src="images/gallery/gallery-3.png" alt="Galerie Bild 3" class="gallery-image">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Us</h3>
+                <p>[Address]</p>
+                <p>Phone: [Phone Number]</p>
+                <p>Email: [Email]</p>
+
+                <div class="business-hours">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: [Hours]</p>
+                    <p>Saturday: [Hours]</p>
+                    <p>Sunday: [Hours]</p>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone">
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>[Address]</p>
+                    <p>[Phone]</p>
+                    <p>[Email]</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Öffnungszeiten</h4>
+                    <p>Mo-Fr: [Hours]</p>
+                    <p>Sa: [Hours]</p>
+                    <p>So: [Hours]</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Folgen Sie uns</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 [Business Name]. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
