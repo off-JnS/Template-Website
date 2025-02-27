@@ -2,48 +2,38 @@
 <html lang="de">
 
 <head>
+    <!-- Meta tags for SEO and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="[Business Description]">
     <title>[Business Name] - [Business Type]</title>
+
+    <!-- External fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Add this to your existing CSS file under the Navigation section */
-        .logo {
-            padding: 0.5rem;
-        }
-
-        .logo img {
-            height: 50px;
-            /* Adjust this value to match your logo's desired height */
-            width: auto;
-            display: block;
-        }
-
-        /* Update the existing nav styles to properly align the logo with navigation */
-        nav {
-            /* ... existing styles ... */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 2rem;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+    <!-- Navigation: Fixed top navigation with mobile menu support -->
+    <nav class="navbar">
+        <!-- Logo container with link -->
         <div class="logo">
-            <img src="images/logo.png" alt="Business Logo">
+            <a href="#home">
+                <img src="images/logo.png" alt="Business Logo">
+            </a>
         </div>
+
+        <!-- Navigation links -->
         <div class="nav-links">
-            <a href="#home">Startseite</a>
             <a href="#about">Über uns</a>
             <a href="#services">Leistungen</a>
-            <a href="#gallery">Galerie</a>
             <a href="#contact">Kontakt</a>
         </div>
+
+        <!-- Mobile menu hamburger button -->
         <button class="mobile-menu-btn" aria-label="Toggle Menu">
             <span></span>
             <span></span>
@@ -51,126 +41,234 @@
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>[Firmenname]</h1>
-            <p class="hero-subtitle">[Slogan]</p>
-            <button class="cta-button">Jetzt Buchen</button>
-        </div>
-        <div class="hero-overlay"></div>
-    </section>
+    <main>
+        <!-- Hero: Full-screen landing section with background image -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>[Firmenname]</h1>
+                <p class="hero-subtitle">[Slogan]</p>
+                <a href="#contact" class="cta-button">Jetzt Buchen</a>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <h2>Über uns</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>[Business Description]</p>
-            </div>
-            <div class="about-image">
-                <img src="images/about/about-img.png" alt="Über uns Bild" class="responsive-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <h2>Unsere Leistungen</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="images/services/service-1.png" alt="Service 1" class="responsive-image">
-                <h3>[Service Name]</h3>
-                <p>[Service Description]</p>
-                <span class="price">[Price]</span>
-            </div>
-            <div class="service-card">
-                <img src="images/services/service-2.png" alt="Service 2" class="responsive-image">
-                <h3>[Service Name]</h3>
-                <p>[Service Description]</p>
-                <span class="price">[Price]</span>
-            </div>
-            <div class="service-card">
-                <img src="images/services/service-3.png" alt="Service 3" class="responsive-image">
-                <h3>[Service Name]</h3>
-                <p>[Service Description]</p>
-                <span class="price">[Price]</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <h2>Unsere Galerie</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/gallery/gallery-1.png" alt="Galerie Bild 1" class="gallery-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery/gallery-2.png" alt="Galerie Bild 2" class="gallery-image">
-            </div>
-            <div class="gallery-item">
-                <img src="images/gallery/gallery-3.png" alt="Galerie Bild 3" class="gallery-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Visit Us</h3>
-                <p>[Address]</p>
-                <p>Phone: [Phone Number]</p>
-                <p>Email: [Email]</p>
-
-                <div class="business-hours">
-                    <h3>Business Hours</h3>
-                    <p>Monday - Friday: [Hours]</p>
-                    <p>Saturday: [Hours]</p>
-                    <p>Sunday: [Hours]</p>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>Über uns</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="images/about/about-img.png" alt="Über uns Bild" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                        </p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                        <a href="#contact" class="about-cta">Kontakt aufnehmen</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone">
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2>Unsere Leistungen</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="images/services/service-1.png" alt="Service 1" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>[Service Name]</h3>
+                            <p>[Service Description]</p>
+                            <div class="service-footer">
+                                <span class="price">ab €[Price]</span>
+                                <a href="#contact" class="service-cta">Anfragen</a>
+                            </div>
+                        </div>
+                    </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="images/services/service-2.png" alt="Service 2" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>[Service Name]</h3>
+                            <p>[Service Description]</p>
+                            <div class="service-footer">
+                                <span class="price">ab €[Price]</span>
+                                <a href="#contact" class="service-cta">Anfragen</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="images/services/service-3.png" alt="Service 3" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>[Service Name]</h3>
+                            <p>[Service Description]</p>
+                            <div class="service-footer">
+                                <span class="price">ab €[Price]</span>
+                                <a href="#contact" class="service-cta">Anfragen</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>Unsere Galerie</h2>
+                <div class="gallery-carousel">
+                    <button class="carousel-button prev" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide active">
+                                <img src="images/gallery/gallery-1.png" alt="Galerie Bild 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/gallery/gallery-2.png" alt="Galerie Bild 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/gallery/gallery-3.png" alt="Galerie Bild 3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-button next" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-dots">
+                        <button class="dot active" aria-label="Image 1"></button>
+                        <button class="dot" aria-label="Image 2"></button>
+                        <button class="dot" aria-label="Image 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Kontakt</h2>
+                <div class="contact-container">
+                    <div class="contact-left">
+                        <div class="contact-info">
+                            <h3>Kontaktieren Sie uns</h3>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>[Straße, PLZ Ort]</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <p>[Telefon]</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>[Email]</p>
+                            </div>
+
+                            <div class="business-hours">
+                                <h3>Öffnungszeiten</h3>
+                                <div class="hours-grid">
+                                    <div class="hours-item">
+                                        <span>Montag - Freitag:</span>
+                                        <span>[Zeit]</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Samstag:</span>
+                                        <span>[Zeit]</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Sonntag:</span>
+                                        <span>[Zeit]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Maps Embed -->
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAPS_EMBED_CODE" width="100%"
+                                height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Telefon">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Nachricht Senden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="images/logo.png" alt="Business Logo" class="footer-logo">
+                    <p class="footer-description">[Business Description kurz]</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#services">Leistungen</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
                     <h4>Kontakt</h4>
-                    <p>[Address]</p>
-                    <p>[Phone]</p>
-                    <p>[Email]</p>
+                    <p><i class="fas fa-map-marker-alt"></i> [Adresse]</p>
+                    <p><i class="fas fa-phone"></i> [Telefon]</p>
+                    <p><i class="fas fa-envelope"></i> [Email]</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Öffnungszeiten</h4>
-                    <p>Mo-Fr: [Hours]</p>
-                    <p>Sa: [Hours]</p>
-                    <p>So: [Hours]</p>
-                </div>
-                <div class="footer-section">
+                <div class="footer-social">
                     <h4>Folgen Sie uns</h4>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 [Business Name]. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <span class="separator">|</span>
+                    <a href="#">Datenschutz</a>
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 

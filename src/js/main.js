@@ -1,73 +1,149 @@
+/**
+ * Mobile Navigation Handler
+ * Controls the mobile menu toggle functionality
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-    }
+    // Toggle mobile menu
+    mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
 
-    // Close mobile menu when clicking links
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            mobileMenuBtn.classList.remove('active');
             navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Gallery Carousel
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const dotsNav = document.querySelector('.carousel-dots');
+    const dots = Array.from(dotsNav.children);
+
+    let currentIndex = 0;
+    const slideCount = slides.length;
+    let autoplayInterval;
+
+    // Functions
+    const moveToSlide = (index) => {
+        // Remove active classes
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        // Add active classes to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        currentIndex = index;
+    };
+
+    const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % slideCount;
+        moveToSlide(currentIndex);
+    };
+
+    const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        moveToSlide(currentIndex);
+    };
+
+    // Event Listeners
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+    });
+
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            moveToSlide(index);
+            resetAutoplay();
         });
     });
 
-    // Button animation
-    const ctaButton = document.querySelector('.cta-button');
-    ctaButton.addEventListener('click', () => {
-        document.querySelector('#about').scrollIntoView({
+    // Autoplay
+    const startAutoplay = () => {
+        autoplayInterval = setInterval(nextSlide, 10000); // 10 seconds
+    };
+
+    const resetAutoplay = () => {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+    };
+
+    // Initialize
+    startAutoplay();
+});
+
+/**
+ * Smooth Scroll Handler
+ * Enables smooth scrolling for navigation links
+ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
-
-    // Add animation to project cards when they come into view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    });
-
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s, transform 0.5s';
-        observer.observe(card);
-    });
-
-    // Form submission handler
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Add form submission logic here
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-
-    // Dynamic year update
-    const yearSpan = document.querySelector('.year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
 });
+
+/**
+ * Form Submission Handler
+ * Manages contact form submission and validation
+ */
+const contactForm = document.querySelector('.contact-form');
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // ... form handling logic ...
+});
+
+function initializeGallery() {
+    const galleryImages = document.querySelectorAll('.gallery-image');
+
+    galleryImages.forEach(image => {
+        image.addEventListener('load', () => {
+            image.classList.add('loaded');
+        });
+    });
+}
+
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+        // Add your form submission logic here
+        console.log('Form data:', Object.fromEntries(formData));
+        form.reset();
+        alert('Nachricht erfolgreich gesendet!');
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
+    }
+}
